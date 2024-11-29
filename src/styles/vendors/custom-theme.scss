@@ -1,0 +1,90 @@
+@use '@angular/material' as mat;
+
+// Purple palette
+$md-purple-palette: (
+  50: #f2e5fe,
+  100: #dfbffc,
+  200: #c994fa,
+  300: #b369f8,
+  400: #a349f7,
+  500: #9329f5,
+  600: #8b24f4,
+  700: #801ff2,
+  800: #7619f0,
+  900: #640fee,
+  A100: #ffffff,
+  A200: #efe6ff,
+  A400: #cdb3ff,
+  A700: #bc9aff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// Accent pelette
+$md-accent-palette: (
+  50: #fdecf3,
+  100: #f9cfe2,
+  200: #f6afcf,
+  300: #f28ebb,
+  400: #ef76ad,
+  500: #ec5e9e,
+  600: #ea5696,
+  700: #e74c8c,
+  800: #e44282,
+  900: #df3170,
+  A100: #ffffff,
+  A200: #fff0f5,
+  A400: #ffbdd3,
+  A700: #ffa3c3,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$studio-paths-primary: mat.define-palette($md-purple-palette);
+$studio-paths-accent: mat.define-palette($md-accent-palette);
+
+// The warn palette is optional (defaults to red).
+$studio-paths-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$studio-paths-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $studio-paths-primary,
+      accent: $studio-paths-accent,
+      warn: $studio-paths-warn,
+    ),
+  )
+);

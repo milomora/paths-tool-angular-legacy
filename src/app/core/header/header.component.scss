@@ -1,0 +1,45 @@
+@use 'variables' as var;
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var.getVar('primary');
+  color: var.getVar('white');
+  box-shadow: var.getVar('shadow');
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    max-height: 3rem;
+  }
+}
+
+.nav-button {
+  &.user-icon {
+    --mat-mdc-button-persistent-ripple-color: #{var.getVar('white')};
+
+    // ::ng-deep {
+    //   .mat-mdc-button-persistent-ripple::before {
+    //     background-color: var.getVar('white');
+    //   }
+    // }
+  }
+
+  &.active {
+    font-weight: bold;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0.5rem 0;
+      height: 2px;
+      background: var.getVar('white');
+    }
+  }
+}
